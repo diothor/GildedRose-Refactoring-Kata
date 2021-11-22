@@ -6,11 +6,11 @@ import com.gildedrose.QualityModifier;
 public class QualityFactory {
 
     private final PassQualityModifierBuilder passQualityModifierBuilder;
-    private final BeforeAfterDateModifierBuilder sebaQualityModifierBuilder;
+    private final BeforeAfterDateModifierBuilder<QualityModifier> sebaQualityModifierBuilder;
 
     public QualityFactory() {
         passQualityModifierBuilder = new PassQualityModifierBuilder();
-        sebaQualityModifierBuilder = new BeforeAfterDateModifierBuilder(5, new IncreaseQualityModifier(), new DecreaseQualityModifier());
+        sebaQualityModifierBuilder = new BeforeAfterDateModifierBuilder<>(5, new IncreaseQualityModifier(), new DecreaseQualityModifier());
     }
 
     public QualityModifier build(Item item) {
